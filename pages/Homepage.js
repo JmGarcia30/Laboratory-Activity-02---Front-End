@@ -8,9 +8,16 @@ export default function Homepage({navigation}){
             <Text style={styles.title}>Welcome to my App</Text>
             <View style={styles.containerButton} >
                 <Button 
+                style={styles.buttonContainer}
                 title = "Register" 
                 onPress={() => navigation.navigate('Register')}/>
+
+                <Button
+                style={styles.buttonContainer}
+                title = "View All Users"
+                onPress={() => navigation.navigate('UserList')}/>
+
             </View>
         </View>
     );
-}
+}   

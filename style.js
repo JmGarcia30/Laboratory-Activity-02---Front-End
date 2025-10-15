@@ -12,13 +12,26 @@ export default StyleSheet.create({
         fontSize: 32,
         fontWeight: 'bold',
         marginBottom: 23,
+        textAlign: 'center',
+        color: '#2b17a5',
     },
+
 
     buttonContainer:{
         marginVertical: 10,
         fontWeight: 'bold',
+        marginTop: 20,
         marginBottom: 10,
         borderRadius: 8,
+        width: '50%',
+        backgroundColor: '#2b17a5',
+        color: 'white',
+    },
+
+    userContainer:{
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
     },
 
     input: {
