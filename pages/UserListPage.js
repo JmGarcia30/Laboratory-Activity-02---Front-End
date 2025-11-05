@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import styles from '../style';
 
-export default function UserListPage(){
+export default function UserListPage({navigation}){
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("http://192.168.30.109:8000/registration/api/users/")
+        axios.get("http://192.168.30.109:8080/registration/api/users/")
         .then((res) => {
             setUsers(res.data);
             setLoading(false);
@@ -40,7 +40,7 @@ export default function UserListPage(){
                     style: "destructive",
                     onPress: () => {
                         axios
-                        .delete(`http://192.168.30.109:8000/registration/api/users/${id}/`)
+                        .delete(`http://192.168.30.109:8080/registration/api/users/${id}/`)
                         .then(() => {
                             Alert.alert("Success", "User deleted successfully");
                         })
@@ -54,7 +54,9 @@ export default function UserListPage(){
         );  
     };
     
-    
+    const handleEdit = (user) =>{
+        navigation.navigate("EditUser", {user});
+    }
 
     return(
         <View>
@@ -71,6 +73,7 @@ export default function UserListPage(){
                         <Button
                         title="Edit"
                         color="#40d32dff"
+                        onPress={()=> handleEdit(item)}
                         />
 
                         <Button

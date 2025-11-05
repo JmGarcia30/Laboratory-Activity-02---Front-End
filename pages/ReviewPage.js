@@ -9,7 +9,7 @@ export default function ReviewPage({ route, navigation }) {
     const handleSubmit = async ()=> {
         try {
             const response = await axios.post(
-                "http://192.168.30.109:8000/registration/api/register/", formData
+                "http://192.168.30.109:8080/registration/api/register/", formData
             );
             console.log(response.data);
         }catch (error){
